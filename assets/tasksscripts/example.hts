@@ -1,0 +1,81 @@
+example:0,0,0,-1,0,0,0,0,0,0,0,0,0:0,0,0,0,-1,0,0,0
+h
+pv-30.0,430.0
+rspalisadebiggate
+mv-25.0,495.0
+rspalisadebiggate
+mv-25.0,750.0
+rsmilestone-stone-e
+csTravel along Swamp Cross
+mr1.0,1.0
+rsdragonfly
+h
+e
+
+first line is the task header
+second line is requirements (0 for none, -1 for highest available, -2 for highest)
+
+First letter is the task type, second letter is the data type for the task target and the rest of the
+line is the data(s) in question
+
+
+Actions (message header)
+
+h is hearth
+p is pathfind (with prepaths)
+m is move
+r is rightclick
+c is choose option
+f is follow
+$ is repeat
+e is end script
+
+Info on $:
+repeats the script. Requires two arguments, first is how many lines to go back,
+second argument is how many times to repeat, or a condition
+
+
+Data formats (target)
+
+v is vector
+r is relative vector
+s is string
+f is float
+p is for player (has to be kinned or described)
+z is for zone (zone area file)
+
+
+Conditions (target)
+c defines an if condition
+
+
+Condition Variables:
+
+object getters
+c is closest object
+n is closest object of name
+a is for closest object at
+m is closest object of name at
+
+object parameters (suffixed with &)
+d is distance
+
+comparators:
+<, >, =
+
+
+Example condition:
+
+rsdragonfly
+
+
+$2:c(m( sboar , r10.0,0.0)&d < f150.0)
+
+
+
+(would return two lines back to repeat if closest object of name boar is closer than 15.00 at relative coordinate 10,0
+
+This script generates a pathfind to bring the player to the position -30 700
+after hearthing, relative to the visible location marker (stockpile-coinitem) and
+right clicks the nearest Milestone(silestone-stone-e) and chooses the option Swamp Cross.
+Script ends at e, so what's after isn't read by the Oligarchy server program.
