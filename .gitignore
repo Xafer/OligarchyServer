@@ -21,7 +21,3 @@ $RECYCLE.BIN/
 # =========================
 # Operating System Files
 # =========================
-
-bin
-.settings
-.project
